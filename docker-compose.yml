@@ -1,0 +1,11 @@
+version: "3"
+services:
+
+    geleilate:
+        tty: true
+        stdin_open: true
+        build: .
+        container_name: geleilate-back
+        ports:
+        - 3000:3000
+        restart: always
