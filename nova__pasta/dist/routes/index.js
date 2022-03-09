@@ -1,0 +1,24 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var express_1 = require("express");
+var adm_routes_1 = __importDefault(require("./adm.routes"));
+var user_routes_1 = __importDefault(require("./user.routes"));
+var sessions_routes_1 = __importDefault(require("./sessions.routes"));
+var user_offices_routes_1 = __importDefault(require("./user_offices.routes"));
+var product_routes_1 = __importDefault(require("./product.routes"));
+var product__atributes_routes_1 = __importDefault(require("./product._atributes.routes"));
+var offers_routes_1 = __importDefault(require("./offers.routes"));
+var negotiation_routes_1 = __importDefault(require("./negotiation.routes"));
+var routes = (0, express_1.Router)();
+routes.use('/admin', adm_routes_1.default);
+routes.use('/users', user_routes_1.default);
+routes.use('/sessions', sessions_routes_1.default);
+routes.use('/offices', user_offices_routes_1.default);
+routes.use('/product', product_routes_1.default);
+routes.use('/atributeofproduct', product__atributes_routes_1.default);
+routes.use('/offer', offers_routes_1.default);
+routes.use('/negotiation', negotiation_routes_1.default);
+exports.default = routes;
